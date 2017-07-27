@@ -13,6 +13,9 @@
 \item[1] {\it What have you learned recently about iOS development? How did you learn it? Has it changed your approach to building apps? }
 
 I learned how to use Google Cloud functions to perform operations in the cloud instead of the devices handling all with the application. This feature has me very impressed because one can perform computationally expensive operations in the cloud, that otherwise would make your app slower. It is also an excellent way to add security because the code is not in your application, so one could use for example a token hard coded in the cloud with out compromising the security. 
+
+I used Google cloud functions to handle notification for the app CHAOL, it is an app I have in the app store. 
+
 \item[2] {\it Can you talk about a framework that you've used recently (Apple or third-party)? What did you like/dislike about the framework?}
 
 I recently used CoreLocation, Apple's framework to point your location. I liked it has some functionality build in it, like finding the distance from a location object to another location object.  Or that is easy to obtain latitude and longitude from a location object, it also neat that it comes with a timestamp that allows you to know how old is the location information. I do not like that it is not very reliable when used with devices that only use WiFi and do not have GPS integrated, like the iPad.
@@ -48,18 +51,54 @@ I am not sure I know the answer to this. When using a UITableViewCell y implemen
 
 \item[5] {\it Imagine that you have been given a project that has this ActorViewController. The ActorViewController should be used to display information about an actor. However, to send information to other ViewControllers, it uses NSUserDefaults. Does this make sense to you? How would you send information from one ViewController to another one?}
 
-It does not make sense to me, perhaps I could send information to another View controller if it is going to be pushed into, you instantiate the viewController inside the ActorViewController and asign to the viewController properties with the information I wanted to send. 
-
-\item[6] {\it Imagine that you have been given a project that has this GithubProjectViewController. The GithubProjectViewController should be used to display high-level information about a GitHub project. However, it?s also responsible for finding out if there?s network connectivity, connecting to GitHub, parsing the responses and persisting information to disk. It is also one of the biggest classes in the project. Follow-up question:: How might you improve the design of this view controller?}
-
 It does not make sense to me to send information to anotherViewController using NSUserDefaults, at least not in general. If the anotherViewController is going to be pushed into ActorViewController, you might instantiate the viewController inside the ActorViewController and assign to the viewController properties with the information I wanted to send. If your viewController is somehow unrelated to the ActorViewController and you want to send information, you would need to create a model with the information you want to send and save it like in coreData or FirebaseDatabase. Then retrieve the necessary information on the anotherViewController when it loads or when it is going to appear.
+
+\item[6] {\it Imagine that you have been given a project that has this GithubProjectViewController. The GithubProjectViewController should be used to display high-level information about a GitHub project. However, it's also responsible for finding out if there's network connectivity, connecting to GitHub, parsing the responses and persisting information to disk. It is also one of the biggest classes in the project. Follow-up question:: How might you improve the design of this view controller?}
+
+I would relieve all the work the GithubProjectViewController is doing into other classes. For example, I will create a class to be in charge of finding if there is network connectivity and connecting to GitHub, and return the data in the desired format. I would also have another class to persist information into the disk. I will then search if other tasks are not related to managing views that I can assign to different classes. 
 
 \item[7] {\it If you were to start your iOS developer position today, what would be your goals a year from now?}
 
-I would love to have a more of a leadership position within the company,  where I could influence Kuri's behavior and capabilities, not just implement the code. Another big goal would be to learn as much as I can of React native and anyother thing that would be need it to make Kuri the best robot it can be. 
-
+Within a year would be to learn as much as I can of React native, core ML and  AI. I do have some knowledge on machine learning, like linear regression, nearest neighbors,  but I would like to know how to apply it in the case of a robot like Kuri. 
+ 
+In the long term goals, I would love to have a more of a leadership position within the company,  where I could influence Kuri's behavior and capabilities, not just implement the code.
 
 \end{itemize}
+
+
+
+
+%Mayfield Robotics is the startup behind Kuri, the adorable home robot that won a pile of awards at CES 2017 and that also pinkie-swears not to take over the world and eradicate humanity. We're growing and looking for people to come help us make Kuri even more adorable and awesome.
+
+%We operate with all the best aspects of being a startup: independence, speed, transparency, teamwork, and a well-stocked kitchen. We also have the focus and discipline of a company that knows exactly where it?s going, without the distraction of fundraising (we?re wholly owned by a much larger company that loves what we?re doing, thinks long term, and mostly leaves us alone). We were founded in February of 2015, and we?re based in sunny Redwood City, California - the epicenter of both Silicon Valley and the future of robotics.
+
+%ROLE
+
+%Our mobile apps are a big part of how Kuri communicates with those around him. They help translate Kuri's thoughts into plain English (Kuri speaks only Robot), give you a glimpse into how Kuri sees the world around him and let you browse through the things Kuri has seen and heard throughout the day. We're looking for an experienced mobile developer to help us build apps that would both support our internal prototyping efforts, and drive the development of the Kuri app we'll ship to the App Store for our customers. There will be plenty of challenges along the way ? from figuring out the best way to live stream all kinds of cool info from the robot with our software team, to visualizing mapping and navigation paths or sweating the details on novel interactions with our product team. You'll be joining a group people who are all richly talented, charmingly diverse, sometimes goofy, and 100% passionate about all things robots.
+
+%RESPONSIBILITIES
+
+%Write code that is performant and maintainable.
+%Obsess a little over how secure your code is. We care deeply about our user?s privacy and you should, too.
+%Care about the small details of translating our product team?s vision for the app to code. You know your platform better than anyone, so be willing to participate in discussions about how things should work.
+%Support the team in prototyping or internal testing efforts.
+%Test and debug mobile apps using both coded and manually executed test cases on a wide variety of mobile devices.
+%Ship betas and prototypes often, so we can make sure we?re building the right thing and building things right.
+%Clearly communicate status and open issues to your team and manager. This is a collaborative role.
+%REQUIREMENTS
+
+%2+ years of iOS development experience
+%Experience shipping production-quality code
+%Strong knowledge of React Native, Objective-C, latest iOS SDK
+%Familiarity with Swift, Java
+%Must have recent experience developing one or more apps for mobile platforms (iPhone, iPad, Android, or Android-based tablets), published apps preferred
+%NICE TO HAVE, BUT NOT REQUIRED
+
+%Have shipped a product recently
+%Experience with message oriented frameworks (e.g. MQTT) a plus
+
+
+
 
 
 \end{document}
